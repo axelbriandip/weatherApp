@@ -5,6 +5,28 @@
   font-family: sans-serif;
 }
 
-span {
-  display: block;
+:root {
+  --negro: #333;
+  --blanco: #eee;
+}
+
+.App {
+  width: 100vw;
+  height: 100vh;
+  background-image: url('../src/img/bkg-cloud.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.weather-card {
+  border: 1px solid var(--negro);
+  width: 25rem;
+  height: 20rem;
+  border-radius: .5rem;
+  background-color: var(--blanco);
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
