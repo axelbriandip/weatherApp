@@ -3,7 +3,7 @@
   margin: 0;
   box-sizing: border-box;
   font-family: sans-serif;
-  color: var(--negro);
+  color: var(--blanco);
 }
 
 :root {
@@ -14,7 +14,7 @@
 .App {
   width: 100vw;
   height: 100vh;
-  background-image: url('../src/img/bkg-cloud.jpg');
+  background-image: url('../src/img/bkg-cloud-1.jpg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -24,21 +24,15 @@
 }
 
 .weather-card {
-  border: 1px solid var(--negro);
+  border: 2px solid var(--blanco);
   width: 25rem;
   height: 20rem;
   border-radius: .5rem;
-  background-color: var(--blanco);
-  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
   padding: 1.5rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-}
-
-.header {
-  display: flex;
-  justify-content: flex-end;
+  background-color: rgba(0, 0, 0, .75);
 }
 
 .info-temperature {
@@ -63,6 +57,7 @@
   margin-top: .5rem;
   width: 6rem;
   background-color: var(--blanco);
+  color: var(--negro);
   border: 1px solid var(--negro);
   padding: .25rem 0;
   border-radius: .25rem;
