@@ -3,6 +3,7 @@ import axios from 'axios';
 
 const WeatherCard = () => {
     const [ubication, setUbication] = useState({});
+    const [isCelsius, setIsCelsius] = useState(true);
 
     useEffect(() => {
         const success = pos => {
@@ -14,6 +15,14 @@ const WeatherCard = () => {
         }
         navigator.geolocation.getCurrentPosition(success);
     }, [])
+
+    const changeTemperatureUnit = () => {
+        if(isCelsius) {
+            setIsCelsius(!isCelsius);
+        } else {
+            setIsCelsius(!isCelsius);
+        }
+    }
 
     // datos
     const country = ubication.sys?.country;
@@ -37,11 +46,11 @@ const WeatherCard = () => {
             </div>
             <div className="info-temperature">
                 <div className="container-img">
-                    <img src={iconURL} alt="ícon-weather" />
+                    <img className='icon-weather' src={iconURL} alt="ícon-weather" />
                 </div>
                 <div className="container-degrees">
-                    <span className='temperature'>{celsius}</span>
-                    <button className='btn-change'>Change</button>
+                    <span className='temperature'>{isCelsius ? `${celsius}°C` : `${farenheit}°F`}</span>
+                    <button onClick={changeTemperatureUnit} className='btn-change'>{isCelsius ? `to farenheit` : `to celsius`}</button>
                 </div>
             </div>
             <div className="info-aditional">
